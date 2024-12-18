@@ -34,6 +34,7 @@ if (isset($_GET["rid"])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MyRequest</title>
 </head>
+<br><br><br><br>
 
 <body>
     <div class="container mt-5">
@@ -84,6 +85,12 @@ if (isset($_GET["rid"])) {
                                     <?php
                                     if ($row['request_status'] == 1) {
                                         echo "<span style='color: green;'>Accepted</span>";
+
+                                        ?>
+                                        <a href="Chat.php?id=<?php echo $row["user_id"] ?>" class="btn btn-danger">Chat</a>
+                                        <?php
+
+
                                     } elseif ($row['request_status'] == 2) {
                                         echo "<span style='color: red;'>Rejected</span>";
                                     } else {
@@ -167,6 +174,11 @@ if (isset($_GET["rid"])) {
                                         <a href="HandleRequest.php?rid=<?php echo $row['request_id']; ?>"
                                             class="btn btn-danger btn-sm">Reject</a>
                                         <?php
+                                    } else if ($row['request_status'] == 1) {
+                                        ?>
+                                            <a href="Chat.php?id=<?php echo $row["user_id"] ?>" class="btn btn-danger">Chat</a>
+                                        <?php
+
                                     } else {
                                         echo "No Action";
                                     }
@@ -184,6 +196,7 @@ if (isset($_GET["rid"])) {
         </div>
     </div>
 </body>
+<br><br><br><br><br>
 
 </html>
 <?php

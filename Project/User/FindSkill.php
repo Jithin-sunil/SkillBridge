@@ -118,8 +118,7 @@ include("../Assets/Connection/Connection.php");
                                 <td><?php echo $row["category_name"] ?></td>
                                 <td><?php echo $row["skill_name"] ?></td>
                                 <td>
-                                    <a href="Chat.php?id=<?php echo $row["user_id"] ?>" class="btn btn-danger">Chat</a>
-                                    <a href="Request.php?usid=<?php echo $row["userskill_id"] ?>" class="btn btn-danger">Request</a>
+                                        <a href="Request.php?usid=<?php echo $row["userskill_id"] ?>" class="btn btn-danger">Request</a>
                                 </td>
                             </tr>
                     <?php

@@ -26,6 +26,7 @@ if(isset($_POST["submit"]))
 
 
 ?>
+<br><br><br><br>
 <body>
 
     <div class="container mt-5">
@@ -36,7 +37,7 @@ if(isset($_POST["submit"]))
                         <td>Message</td>
                         <td colspan="2">
                         
-                        <textarea class="form-control" name="txt_mesage" id="txt_mesage" rows="3" required></textarea>
+                        <textarea  name="txt_mesage" id="txt_mesage" rows="3" required></textarea>
                     </td>
                     </tr>
                     <tr>
@@ -53,7 +54,8 @@ if(isset($_POST["submit"]))
     </div>
 
 </body>
-
+<br>
+<br><br><br>
 </html>
 <?php
 include("Foot.php")
