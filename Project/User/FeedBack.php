@@ -7,14 +7,14 @@ if(isset($_POST["txtsub"]))
 	
 	$title=$_POST["title"];
 	$content=$_POST["content"];
-	$insQry="insert into tbl_complaint(complaint_title,complaint_content,user_id,complaint_date)values('".$title."','".$content."','".$_SESSION["uid"]."',curdate())";
+	$insQry="insert into tbl_feedback(feedback_content,user_id,complaint_date)values('".$content."','".$_SESSION["uid"]."',curdate())";
 	
 	if($conn->query($insQry))
 	{
 		?>
         <script>
 		alert("Data Inserted");
-		window.location="Complaint.php";
+		window.location="FeedBack.php";
 		</script>
         <?php
 	}
@@ -32,13 +32,13 @@ if(isset($_POST["txtsub"]))
 }
 if(isset($_GET["did"]))
 {
-	$del="delete from tbl_complaint where complaint_id='".$_GET["did"]."'";
+	$del="delete from tbl_feedback where feedback_id='".$_GET["did"]."'";
 	if($conn->query($del))
     {
         ?>
         <script>
             alert("Data Deleted");
-            window.location="Complaint.php";
+            window.location="FeedBack.php";
         </script>
         <?php
     }
@@ -120,7 +120,7 @@ $row = $result->fetch_assoc()
                         if ($_SESSION['uid'] == $row['user_id']) {
                             ?>
                             <td>
-                                <a href="feedback.php?did=<?php echo $row["feedback_id"] ?>" class="btn btn-danger">Delete</a>
+                                <a href="FeedBack.php?did=<?php echo $row["feedback_id"] ?>" class="btn btn-danger">Delete</a>
                             </td>
                             <?php
                         }
